@@ -5,7 +5,7 @@
     <parent>
         <groupId>com.vaadin</groupId>
         <artifactId>flow-project</artifactId>
-        <version>23.1-SNAPSHOT</version>
+        <version>23.1.1-DEV</version>
     </parent>
     <artifactId>flow</artifactId>
     <packaging>pom</packaging>
@@ -26,37 +26,37 @@
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>flow-client</artifactId>
-            <version>${project.version}</version>
+            <version>23.1.1-DEV</version>
         </dependency>
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>flow-html-components</artifactId>
-            <version>${project.version}</version>
+            <version>23.1.1-DEV</version>
         </dependency>
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>flow-data</artifactId>
-            <version>${project.version}</version>
+            <version>23.1.1-DEV</version>
         </dependency>
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>flow-dnd</artifactId>
-            <version>${project.version}</version>
+            <version>23.1.1-DEV</version>
         </dependency>
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>flow-lit-template</artifactId>
-            <version>${project.version}</version>
+            <version>23.1.1-DEV</version>
         </dependency>
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>flow-polymer-template</artifactId>
-            <version>${project.version}</version>
+            <version>23.1.1-DEV</version>
         </dependency>
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>fusion-endpoint</artifactId>
-            <version>${project.version}</version>
+            <version>23.1.1-DEV</version>
         </dependency>
     </dependencies>
 

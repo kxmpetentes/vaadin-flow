@@ -875,10 +875,12 @@ public abstract class AbstractNavigationStateRenderer
         if (routeTarget instanceof HasDynamicTitle) {
             title = ((HasDynamicTitle) routeTarget).getPageTitle();
         } else {
-            title = lookForTitleInTarget(routeTarget).map(PageTitle::value)
-                    .orElse("");
+            title = lookForTitleInTarget(routeTarget).map(PageTitle::value).orElse("");
         }
-        navigationEvent.getUI().getPage().setTitle(title);
+
+        if (title != null && !title.isEmpty()) {
+            navigationEvent.getUI().getPage().setTitle(title);
+        }
     }
 
     private static Optional<PageTitle> lookForTitleInTarget(

@@ -5,7 +5,7 @@
     <parent>
         <groupId>com.vaadin</groupId>
         <artifactId>flow-project</artifactId>
-        <version>23.1-SNAPSHOT</version>
+        <version>23.1.1-DEV</version>
     </parent>
     <artifactId>vaadin-dev-server</artifactId>
     <name>Vaadin Development Mode Server</name>
@@ -37,14 +37,6 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- Test dependencies -->
-
-        <dependency>
-            <groupId>com.vaadin</groupId>
-            <artifactId>flow-test-util</artifactId>
-            <version>${project.version}</version>
-            <scope>test</scope>
-        </dependency>
 
         <dependency>
             <groupId>com.vaadin</groupId>

@@ -6,7 +6,7 @@
     <artifactId>flow-project</artifactId>
     <name>Flow</name>
     <packaging>pom</packaging>
-    <version>23.1-SNAPSHOT</version>
+    <version>23.1.1-DEV</version>
 
     <parent>
         <groupId>com.vaadin</groupId>
@@ -25,11 +25,8 @@
         <module>flow-html-components</module>
         <module>flow-html-components-testbench</module>
         <module>flow-dnd</module>
-        <module>flow-test-util</module>
-        <module>flow-tests</module>
         <module>flow-server-production-mode</module>
         <module>flow-plugins</module>
-        <module>flow-test-generic</module>
         <module>flow-bom</module>
         <module>fusion-endpoint</module>
         <module>vaadin-dev-server</module>
@@ -131,17 +128,11 @@
         <osgi.compendium.version>7.0.0</osgi.compendium.version>
         <osgi.annotation.version>7.0.0</osgi.annotation.version>
 
-        <maven.test.skip>false</maven.test.skip>
+        <maven.test.skip>true</maven.test.skip>
 
         <!-- This property is needed to allow some Win-specific unit tests -->
         <!-- to be disabled via system property in CI until they got fixed -->
         <exclude.windows.failed.tests/>
-
-        <testListener>com.vaadin.flow.testutil.CurrentInstanceCleaner</testListener>
-
-        <!-- Skip these categories in validation, use -Pslow-tests to run them
-            and override slow-tests profile to add more categories -->
-        <excludedGroups>com.vaadin.flow.testcategory.SlowTests</excludedGroups>
     </properties>
 
     <repositories>
@@ -344,24 +335,6 @@
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.4.0</version>
-                <executions>
-                    <execution>
-                        <id>attach-javadocs</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <quiet>true</quiet>
-                </configuration>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
             </plugin>
 
@@ -508,33 +481,6 @@
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-surefire-plugin</artifactId>
-                    <version>${maven.surefire.plugin.version}</version>
-                    <configuration>
-                        <trimStackTrace>false</trimStackTrace>
-                        <excludes>
-                            <exclude>${exclude.windows.failed.tests}</exclude>
-                        </excludes>
-                        <argLine>${surefire.argLine}</argLine>
-                        <properties>
-                            <property>
-                                <name>listener</name>
-                                <value>${testListener}</value>
-                            </property>
-                        </properties>
-                        <enableAssertions>true</enableAssertions>
-                        <classpathDependencyExcludes>
-                            <classpathDependencyExclude>org.osgi:org.osgi.core</classpathDependencyExclude>
-                        </classpathDependencyExcludes>
-<!--
-                        <parallel>classes</parallel>
-                        <threadCount>4</threadCount>
--->
-                        <failIfNoTests>false</failIfNoTests>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-failsafe-plugin</artifactId>
                     <version>${maven.failsafe.plugin.version}</version>
                     <executions>
@@ -545,23 +491,6 @@
                             </goals>
                         </execution>
                     </executions>
-                    <configuration>
-                        <trimStackTrace>false</trimStackTrace>
-                        <enableAssertions>true</enableAssertions>
-                        <parallel>all</parallel>
-                        <threadCount>2</threadCount>
-                        <!-- export test server port to integration tests -->
-                        <systemPropertyVariables>
-                            <serverPort>${server.port}</serverPort>
-                            <webdriver.chrome.driver>${webdriver.chrome.driver}
-                            </webdriver.chrome.driver>
-                        </systemPropertyVariables>
-                        <excludes>
-                            <exclude>**/*$*</exclude>
-                            <exclude>${exclude.it.tests}</exclude>
-                            <exclude>${exclude.windows.failed.it.tests}</exclude>
-                        </excludes>
-                    </configuration>
                     <dependencies>
                         <dependency>
                             <groupId>com.sun.xml.bind</groupId>
