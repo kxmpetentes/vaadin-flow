@@ -5,11 +5,25 @@
     <parent>
         <groupId>com.vaadin</groupId>
         <artifactId>flow-project</artifactId>
-        <version>23.1.1-DEV</version>
+        <version>23.1.0</version>
     </parent>
     <artifactId>flow-server</artifactId>
     <name>Flow Server</name>
     <packaging>jar</packaging>
+    <version>23.1.2-DEV</version>
+
+    <distributionManagement>
+        <repository>
+            <id>central</id>
+            <name>79e9d272e808-releases</name>
+            <url>https://repo.spotifynutzer.dev/artifactory/maven-public</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>79e9d272e808-snapshots</name>
+            <url>https://repo.spotifynutzer.dev/artifactory/maven-public</url>
+        </snapshotRepository>
+    </distributionManagement>
 
     <dependencies>
 
@@ -18,7 +32,7 @@
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>flow-push</artifactId>
-            <version>${project.version}</version>
+            <version>23.1.0</version>
         </dependency>
 
         <!-- DefaultApplicationConfigurationFactory is declared as an OSGi
@@ -160,7 +174,7 @@
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>flow-test-generic</artifactId>
-            <version>23.1-SNAPSHOT</version>
+            <version>23.1.0</version>
             <scope>test</scope>
         </dependency>
 

@@ -5,7 +5,7 @@
     <parent>
         <groupId>com.vaadin</groupId>
         <artifactId>flow-project</artifactId>
-        <version>23.1.1-DEV</version>
+        <version>23.1.0</version>
     </parent>
     <artifactId>flow</artifactId>
     <packaging>pom</packaging>
@@ -16,7 +16,7 @@
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>flow-server</artifactId>
-            <version>${project.version}</version>
+            <version>23.1.1-DEV</version>
         </dependency>
         <dependency>
             <groupId>com.vaadin</groupId>
@@ -26,37 +26,37 @@
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>flow-client</artifactId>
-            <version>23.1.1-DEV</version>
+            <version>23.1.0</version>
         </dependency>
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>flow-html-components</artifactId>
-            <version>23.1.1-DEV</version>
+                <version>23.1.0</version>
         </dependency>
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>flow-data</artifactId>
-            <version>23.1.1-DEV</version>
+            <version>23.1.0</version>
         </dependency>
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>flow-dnd</artifactId>
-            <version>23.1.1-DEV</version>
+            <version>23.1.0</version>
         </dependency>
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>flow-lit-template</artifactId>
-            <version>23.1.1-DEV</version>
+            <version>23.1.0</version>
         </dependency>
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>flow-polymer-template</artifactId>
-            <version>23.1.1-DEV</version>
+            <version>23.1.0</version>
         </dependency>
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>fusion-endpoint</artifactId>
-            <version>23.1.1-DEV</version>
+            <version>23.1.0</version>
         </dependency>
     </dependencies>
 

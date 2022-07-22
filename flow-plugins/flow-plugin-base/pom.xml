@@ -3,7 +3,7 @@
     <parent>
         <groupId>com.vaadin</groupId>
         <artifactId>flow-plugins</artifactId>
-        <version>23.1.1-DEV</version>
+        <version>23.1.0</version>
     </parent>
     <artifactId>flow-plugin-base</artifactId>
 

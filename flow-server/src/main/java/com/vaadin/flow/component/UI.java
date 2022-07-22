@@ -642,6 +642,10 @@ public class UI extends Component
                 .getPollInterval();
     }
 
+    public void switchTheme(String themeName) {
+        page.executeJs("document.querySelector('html').attributes.theme.value = '" + themeName + "'");
+    }
+
     /**
      * Retrieves the object used for configuring the loading indicator.
      *

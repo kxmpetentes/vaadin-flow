@@ -104,7 +104,7 @@ public interface AbstractTheme extends Serializable {
             }
             int start = url.lastIndexOf(baseUrl);
             StringBuilder builder = new StringBuilder();
-            builder.append(url.substring(0, start));
+            builder.append(url, 0, start);
             builder.append(themeUrl);
             builder.append(url.substring(start + baseUrl.length()));
             return builder.toString();

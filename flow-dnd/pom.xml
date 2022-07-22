@@ -6,7 +6,7 @@
     <parent>
         <artifactId>flow-project</artifactId>
         <groupId>com.vaadin</groupId>
-        <version>23.1.1-DEV</version>
+        <version>23.1.0</version>
     </parent>
 
     <artifactId>flow-dnd</artifactId>
@@ -17,7 +17,7 @@
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>flow-server</artifactId>
-            <version>${project.version}</version>
+            <version>23.1.1-DEV</version>
         </dependency>
         <!-- Mobile DnD polyfills for iOS support -->
         <!-- using an npm based webjar because it will contain the version number in the path for the resources -->

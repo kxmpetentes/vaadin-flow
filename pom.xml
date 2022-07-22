@@ -6,7 +6,7 @@
     <artifactId>flow-project</artifactId>
     <name>Flow</name>
     <packaging>pom</packaging>
-    <version>23.1.1-DEV</version>
+    <version>23.1.0</version>
 
     <parent>
         <groupId>com.vaadin</groupId>
@@ -53,6 +53,19 @@
         </developerConnection>
         <url>https://github.com/vaadin/flow</url>
     </scm>
+
+    <distributionManagement>
+        <repository>
+            <id>central</id>
+            <name>79e9d272e808-releases</name>
+            <url>https://repo.spotifynutzer.dev/artifactory/maven-public</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>79e9d272e808-snapshots</name>
+            <url>https://repo.spotifynutzer.dev/artifactory/maven-public</url>
+        </snapshotRepository>
+    </distributionManagement>
 
     <properties>
         <flow.release.repo.id>vaadin-prereleases</flow.release.repo.id>
@@ -145,6 +158,12 @@
                 <enabled>false</enabled>
             </snapshots>
         </repository>
+        <repository>
+            <id>jfrog-spotifynutzer</id>
+            <name>jfrog-spotifynutzer</name>
+            <url>https://repo.spotifynutzer.dev/artifactory/maven-public</url>
+        </repository>
+
         <repository>
             <id>${flow.release.repo.id}</id>
             <url>${flow.release.repo.url}</url>
@@ -290,15 +309,6 @@
     </dependencies>
 
     <build>
-        <extensions>
-            <!-- Enabling the use of SSH for deployment -->
-            <extension>
-                <groupId>org.apache.maven.wagon</groupId>
-                <artifactId>wagon-ssh-external</artifactId>
-                <version>3.5.1</version>
-            </extension>
-        </extensions>
-
         <plugins>
             <plugin>
                 <groupId>net.revelc.code.formatter</groupId>
@@ -373,9 +383,11 @@
                 <configuration>
                     <filesets>
                         <fileset>
+                            <!--suppress UnresolvedMavenProperty -->
                             <directory>${project.rootdir}/driver</directory>
                         </fileset>
                         <fileset>
+                            <!--suppress UnresolvedMavenProperty -->
                             <directory>${project.rootdir}/driver_zips
                             </directory>
                         </fileset>

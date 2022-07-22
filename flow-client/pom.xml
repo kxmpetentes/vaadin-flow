@@ -6,7 +6,7 @@
     <parent>
         <groupId>com.vaadin</groupId>
         <artifactId>flow-project</artifactId>
-        <version>23.1.1-DEV</version>
+        <version>23.1.0</version>
     </parent>
     <artifactId>flow-client</artifactId>
     <name>Flow Client</name>
@@ -53,7 +53,7 @@
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>flow-server</artifactId>
-            <version>${project.version}</version>
+            <version>23.1.1-DEV</version>
             <scope>provided</scope>
         </dependency>
         <dependency>

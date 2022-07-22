@@ -142,9 +142,6 @@ public class Html extends Component {
     private void setAttribute(Attribute attribute) {
         String name = attribute.getKey();
         String value = attribute.getValue();
-        if (value == null) {
-            value = "";
-        }
         getElement().setAttribute(name, value);
     }
 
